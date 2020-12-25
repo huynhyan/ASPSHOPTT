@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShopTTModelStoreContainer" CdmEntityContainer="ShopTTEntities">
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="ShopTTModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="adAcc" ColumnName="adAcc" />
+          <ScalarProperty Name="adPass" ColumnName="adPass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="ShopTTModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="cateID" ColumnName="cateID" />
+          <ScalarProperty Name="cateName" ColumnName="cateName" />
+          <ScalarProperty Name="catePhoto" ColumnName="catePhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="ShopTTModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="cusPhone" ColumnName="cusPhone" />
+          <ScalarProperty Name="cusFullName" ColumnName="cusFullName" />
+          <ScalarProperty Name="cusEmail" ColumnName="cusEmail" />
+          <ScalarProperty Name="cusAddress" ColumnName="cusAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="ShopTTModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="orderID" ColumnName="orderID" />
+          <ScalarProperty Name="proID" ColumnName="proID" />
+          <ScalarProperty Name="ordtsQuantity" ColumnName="ordtsQuantity" />
+          <ScalarProperty Name="ordtsThanhTien" ColumnName="ordtsThanhTien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ShopTTModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="orderID" ColumnName="orderID" />
+          <ScalarProperty Name="cusPhone" ColumnName="cusPhone" />
+          <ScalarProperty Name="orderMessage" ColumnName="orderMessage" />
+          <ScalarProperty Name="orderDateTime" ColumnName="orderDateTime" />
+          <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producers">
+      <EntityTypeMapping TypeName="ShopTTModel.Producer">
+        <MappingFragment StoreEntitySet="Producers">
+          <ScalarProperty Name="pdcID" ColumnName="pdcID" />
+          <ScalarProperty Name="pdcName" ColumnName="pdcName" />
+          <ScalarProperty Name="pdcPhone" ColumnName="pdcPhone" />
+          <ScalarProperty Name="pdcEmail" ColumnName="pdcEmail" />
+          <ScalarProperty Name="pdcAddress" ColumnName="pdcAddress" />
+          <ScalarProperty Name="pdcPhoto" ColumnName="pdcPhoto" />
+          <ScalarProperty Name="pdcInfo" ColumnName="pdcInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="ShopTTModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="proID" ColumnName="proID" />
+          <ScalarProperty Name="pdcID" ColumnName="pdcID" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="proName" ColumnName="proName" />
+          <ScalarProperty Name="proSize" ColumnName="proSize" />
+          <ScalarProperty Name="proPrice" ColumnName="proPrice" />
+          <ScalarProperty Name="proDiscount" ColumnName="proDiscount" />
+          <ScalarProperty Name="proPhoto" ColumnName="proPhoto" />
+          <ScalarProperty Name="proUpdateDate" ColumnName="proUpdateDate" />
+          <ScalarProperty Name="proDescription" ColumnName="proDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTypes">
+      <EntityTypeMapping TypeName="ShopTTModel.ProductType">
+        <MappingFragment StoreEntitySet="ProductTypes">
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="cateID" ColumnName="cateID" />
+          <ScalarProperty Name="typeName" ColumnName="typeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

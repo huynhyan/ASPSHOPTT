@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Stylefooter.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet" />
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Shop/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="~/Shop/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/Shop/Content/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/Shop/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Shop/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Shop/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="~/Shop/Content/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <link href="~/Shop/Content/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- js -->
+    <script src="~/Shop/Content/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/Shop/Content/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Shop/Content/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <link href="~/Shop/Content/css/font-awesome.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!--- start-rate---->
+    <script src="~/Shop/Content/js/jstarbox.js"></script>
+    <link rel="stylesheet" href="~/Shop/Content/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+    <!---//End-rate---->
+    <style>
+        #style-6::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background-color: #F5F5F5;
+        }
+
+        #style-6::-webkit-scrollbar {
+            width: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #style-6::-webkit-scrollbar-thumb {
+            background-color: #F90;
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+        }
+    </style>
+</head>
+<body id="style-6">
+    <div class="header">
+        <div class="container">
+            <div>
+                <div class="logo" style="float:left; width:200px; margin-right:700px">
+                    <h1><a href="@Url.Action("Index", "Products")"><img src="~/images/logo.png" style="width:100%; margin-top:-10px" /></a></h1>
+                </div>
+
+                <div class="head-t">
+                    <ul class="card">
+                        <li><a href="@Url.Action("LogIn", "Account")"><i class="fa fa-user" aria-hidden="true" style="color:red"></i>Đăng nhập</a></li>
+                        <li><a href="register.html"><i class="fa fa-arrow-right" aria-hidden="true" style="color:red"></i>Đăng ký</a></li>
+                    </ul>
+                </div>
+                <div class="header-ri">
+                    <ul class="social-top">
+                        <li><a href="http://facebook.com/tung.tim.96" target="_blank" class="icon facebook"><i class="fa fa-facebook" style="color:black" aria-hidden="true"></i><span></span></a></li>
+                        <li><a href="#" class="icon pinterest"><i class="fa fa-youtube-play" aria-hidden="true"></i><span></span></a></li>
+                    </ul>
+                </div>
+
+
+                <div class="nav-top" style="margin-left:370px">
+                    <nav class="navbar navbar-default">
+
+                        <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                            <ul class="nav navbar-nav">
+                                <li><a href="@Url.Action("Index", "Products")" class="hyper"><span>Trang chủ</span></a></li>
+                                <li class="dropdown ">
+                                    @Html.Action("PartialProductTypes", "ProductTypes")
+                                </li>
+                                <li class="dropdown ">
+                                    <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown"><span>Hãng sản xuất<b class="caret"></b></span></a>
+                                    <ul class="dropdown-menu">
+                                        @Html.Action("PartialProducer", "Producers")
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="hyper "><span>Phản hồi</span></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="cart">
+                        @*@{
+                            List<ShopTheThao.DAO.Carts> gio = Session["Carts"] as List<ShopTheThao.DAO.Carts>;
+                            if (gio == null || gio.Count == 0)
+                            {
+                                <a href="@Url.Action("ViewCarts","GioHang")"><span class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge">0</span></span></a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("ViewCarts","GioHang")"><span class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge">@gio.Count</span></span></a>
+                            }
+                        }*@
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Image Header -->
+        <div class="w3-display-container w3-animate-opacity">
+            <img src="~/images/banner.png" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+            
+        </div>
+
+        @RenderBody()
+
+
+      
+            <footer style="padding:50px; background-color:black; color:white">
+                <div class="row my-5 justify-content-center py-5">
+                    <div class="col-11">
+                        <div class="row ">
+                            <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                                <h3 class="text-muted mb-md-0 mb-5 bold-text">ROUTINE.</h3>
+                            </div>
+                            <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                                <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                                <ul class="list-unstyled">
+                                    <li>Trang Chủ</li>
+                                    <li>Hãng Sản Xuất</li>
+                                    <li>Phản Hồi</li>
+                                   
+                                </ul>
+                            </div>
+                            <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                                <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                                <p class="mb-1">605, RATAN ICON BUILDING</p>
+                                <p>SEAWOODS SECTOR</p>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                                <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> RouTine All Rights Reserved.</small>
+                            </div>
+                            <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                                <h6 class="mt-55 mt-2 text-muted bold-text"><b>Email</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span> routine@gmail.com</small>
+                            </div>
+                            <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                                <h6 class="text-muted bold-text"><b>Phone</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> 0866666666</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        <!-- //footer-->
+        <!-- smooth scrolling -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /*
+                    var defaults = {
+                    containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear'
+                };
+                */
+                $().UItoTop({ easingType: 'easeOutQuart' });
+            });
+        </script>
+        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        <!-- //smooth scrolling -->
+        <script src="~/Shop/Content/js/bootstrap.js"></script>
+        <!-- for bootstrap working -->
+
+    </div>
+</body>
+</html>
+

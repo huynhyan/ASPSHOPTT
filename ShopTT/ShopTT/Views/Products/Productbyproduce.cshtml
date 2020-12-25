@@ -1,0 +1,93 @@
+﻿@using ShopTT.Models;
+@model List<Product>
+@{
+    ViewBag.Title = "Productbyproduce";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<div class="content-top ">
+    <div class="container ">
+        <div class="spec ">
+            <h3>ROUTINE SẢN PHẨM</h3>
+        </div>
+        </div>
+        <h4>@ViewBag.message</h4>
+        <!--Hien thi phan trang-->
+        @*<div>
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber )/ @Model.PageCount
+            </div>
+
+
+            <div>
+                SanPham
+                @Html.PagedListPager(Model, page => Url.Action("SanPhamTheoLoai", "SanPham", new { page = page }))
+            </div>*@
+
+        <div class="tab-head ">
+            <div class=" tab-content tab-content-t ">
+                <div class="tab-pane active text-style" id="tab1">
+                    <div class=" con-w3l">
+                        @{ int i = 0; }
+                        @foreach (var item in Model)
+                        {
+                            i++;
+                            int newPrice = Int32.Parse(item.proPrice) - ((Int32.Parse(item.proPrice) * item.proDiscount.Value) / 100);
+                            <div class="col-md-3 m-wthree" style="margin-bottom:30px;">
+                                <div class="col-m">
+                                    <a href="@Url.Action("DetailProducts", "Products", new { @idSP = item.proID })" class="offer-img">
+                                        <img style="height: 250px; width: 225px" src="@Url.Content("~/images/image_sp" + @item.proPhoto)" alt="@item.proPhoto">
+                                        @if (Int32.Parse(item.proPrice) > newPrice)
+                                        {
+                                            <div class="offer"><p><span>Giảm @item.proDiscount %</span></p></div>
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                    </a>
+                                    <div class="mid-1">
+                                        <div class="women">
+                                            @if (item.proName.Length > 20)
+                                            {
+                                                <h6><a href="@Url.Action("DetailProducts", "Products", new { @idSP = item.proID })" data-toggle="tooltip" title="@item.proName">@item.proName.Substring(0, 19) . . .</a></h6>
+                                            }
+                                            else
+                                            {
+                                                <h6><a href="@Url.Action("DetailProducts", "Products", new { @idSP = item.proID })">@item.proName</a></h6>
+                                            }
+                                        </div>
+                                        (Size: @item.proSize)
+                                        <div class="mid-2">
+                                            <h4><em class="item_price">Giá: <span style="color: red; font-weight: bold">@Html.FormatValue(item.proPrice, "{0: #,###}")</span> VND</em></h4>
+                                            <div class="clearfix"></div>
+                                            <div>
+                                                <a href="#">@item.Producer.pdcName</a>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="add">
+                                            <a style="background-color:red; border:none" class="btn btn-success" href="@Url.Action("AddCarts", "GioHang", new { SanPhamID = item.proID })"> <span class="glyphicon glyphicon-shopping-cart"></span>  Thêm vào giỏ </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            if (i % 4 == 0)
+                            {
+                                <div class="clearfix"></div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

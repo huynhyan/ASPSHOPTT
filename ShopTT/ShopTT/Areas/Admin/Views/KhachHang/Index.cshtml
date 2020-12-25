@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ShopTT.Areas.Admin.Models.KhachHangModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Khách hàng</h2>
+<div class="text-warning">
+    @ViewBag.message
+</div>
+<hr />
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="btn btn-primary btn-default" href="@Url.Action("Create", "KhachHang")" role="button">Thêm Loại sản phẩm mới</a>
+        </div>
+        <!-- /.panel-heading -->
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive table-bordered">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Họ Tên KH</th>
+                            <th>SĐT KH</th>
+                            <th>Email KH</th>
+                            <th>Địa chỉ KH</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.cusFullName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.cusPhone)</td>
+                                <td>@Html.DisplayFor(modelItem => item.cusEmail)</td>
+                                <td>@Html.DisplayFor(modelItem => item.cusAddress)</td>
+                                <td>
+                                    <a href="@Url.Action("Edit", "KhachHang", new { id = item.cusPhone })"><i class="fa fa-pencil fa-fw"></i></a>|
+                                    <a onclick="return confirm('Bạn có chắc chắn muốn xoá hãng này?')" href="@Url.Action("Delete", "KhachHang", new { id = item.cusPhone })"><i class="fa fa-times fa-fw"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+

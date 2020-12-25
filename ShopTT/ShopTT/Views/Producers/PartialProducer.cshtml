@@ -1,0 +1,11 @@
+﻿@using ShopTT.Models;
+@model List<Producer>
+
+<div class="col-sm-12">
+    <ul class="multi-column-dropdown">
+        @foreach (var item in Model)
+        {
+            <li><a href="@Url.Action("Productbyproduce", "Products", new { @idpdc = item.pdcID})">@item.pdcName</a></li>
+        }
+    </ul>
+</div>
